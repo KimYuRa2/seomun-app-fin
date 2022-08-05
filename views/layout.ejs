@@ -1,0 +1,274 @@
+<!--
+    <20220513>
+    express-ejs-layouts
+     : https://www.npmjs.com/package/express-ejs-layouts
+    다른 모든 ejs페이지의 헤더/푸터를 항상 불러줌 
+     => 다른 ejs파일에는 main부분 내용만 있으면 됨!
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/notice_read.css">
+    <!-- <link rel="stylesheet" href="./css/notice_write.css"> -->
+    <link rel="stylesheet" href="./css/newNotice.css">
+    <link rel="stylesheet" href="./css/notice.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/tourmission.css">
+    <title></title>
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper2 {
+        display:block;
+        object-fit: cover;
+        width:570px;
+        height:288px;
+        padding:80px 50px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .sl_img{
+        display:block;
+        width:100%;
+        height:1113px;
+        overflow:hidden;
+        margin:0 auto;
+        
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+      }
+
+      .im1{
+        background-image:url(../img/main.jpg);
+      }
+
+      .im2{
+        background-image:url(../img/main7.jpg);
+        background-position: 80% center;
+      }
+
+      .im3{
+        background-image : url(../img/00501055_20170303_1.jpg);
+        background-position: 95% 95%;
+      }
+
+
+      .swiper-slide .banner {
+        display:block;
+        object-fit: cover;
+        width:570px;
+        height:288px;
+        background-color: red;
+        padding:80px 50px;
+        box-sizing: border-box;
+        position:absolute;
+        bottom:100px;
+        right:100px;
+        z-index:2;  
+        text-align: center;
+        font-weight: bold;
+        color:white;
+      }
+
+      /************************/
+      .swiper23 {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-top : 45px;
+      }
+
+      .swiper-slide>img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        position:absolute;
+        width:30px;
+        height:30px;
+      }
+      .swiper-button-prev{
+        left: 0;
+        
+      }
+      .swiper-button-next{
+        left: 40px;
+        
+      }
+      
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        display: none;
+      }
+
+      .swiper_btn{
+        margin-top: 30px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .swiper-slide{
+            width:100%;
+            height:100%;
+        }
+        .sl_img{
+          width:100%;
+          height:923px;
+          background-position: center center;
+          background-size: auto 100%;
+        }
+
+      .im2{
+        background-image:url(../img/main7.jpg);
+        background-position: center center;
+      }
+
+      .im3{
+        background-image : url(../img/00501055_20170303_1.jpg);
+        background-position: 25% center;
+      }
+
+
+        .swiper23 {
+            width: 80%;
+            height: 100%;
+            position: relative;
+            margin-top : 54px;
+            padding-top : 0;
+        }
+        
+        .swiper-slide>img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+      }
+      
+    </style>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+</head>
+<body>
+    <header>
+        <article class="t_nav">
+            <ul>
+                <li class="t_nav_event"><a href="tourmission">도전! 투어미션</a></li>
+                <li class="t_nav_event"><a href="">스마트비대면주문</a></li>
+                <li><a href="">먹고보고즐길거리</a></li>
+                <li><a href="">입점신청</a></li>
+                <li><a href="notice">참여마당</a></li>
+                <li><a href="intro">야시장소개</a></li>
+
+                <!-- 카카오 로그인 구현 -->
+                <li><span id="user" style="display:none"> </span></li>
+                <li id="logout" style="display:none" onclick="javascript:kakaoLogout();">로그아웃</li>
+            </ul>
+            <h1><a href="/">
+                <img src="./img/logo.jpg">
+            </a></h1>
+            <div class="h_seach_btn">
+                <img src="./img/search.png">
+            </div>
+            <div class="h_user_btn">
+                <a href="login">
+                    <img src="./img/user.jpg">
+                </a>
+            </div>
+            <div class="h_menu_btn">
+                <img src="./img/menu.png">
+            </div>
+        </article>
+    </header>
+
+    
+    <%- body %>
+    
+
+    <footer>
+        <article class="b_footer">
+            <div class="footer_1">
+                <h2>서문시장야시장</h2>
+            </div>
+            <div class="footer_2">
+                <address>
+                    <ul>
+                        <li>
+                            <span>대구 서문시장 야시장</span>
+                        </li>
+                        <li>대구 중구 달성로 50 서문시장</li>
+                        <li>문의 053-256-6341</li>
+                    </ul>
+                </address>
+            </div>
+
+            <div class="footer_3">
+                <a href="https://www.facebook.com/nightseomun/" target="_blank">
+                    <img src="./img/facebook-page-logo.png">
+                </a>
+                <a href="https://blog.naver.com/nightseomun" target="_blank">
+                    <img src="./img/naver-blog_1.png">
+                </a>
+            </div>
+        </article>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../js/swiper.js"></script>
+    <script src="../db.js"></script>
+    <script src="../js/file.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!-- 페이지네이션 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+    <script src="jquery.jold.paginator.min.js"></script>
+</body>
+</html>
