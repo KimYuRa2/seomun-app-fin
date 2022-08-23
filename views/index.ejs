@@ -7,22 +7,23 @@
 
         <!-- 배너 -->
     <main>
-
-    
         <section class="banner_main">
             <div class="banner_marquee">
                 <div class="marquee_wrap">
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>
-                    <span class="marquee-banner__copy">도전! 투어미션</span>                
+                    <a href="tourmission">
+                        <div class="marquee" id="mycrawler" >
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                            <span class="marquee-banner__copy">도전! 투어미션</span>
+                        </div>
+                    </a>            
                 </div>
             </div>
 
@@ -39,7 +40,7 @@
                 </div>
                 <!-- <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div> -->
-                <div class="swiper-pagination"></div>
+                
             </div>
 
             <div class="banner">
@@ -260,3 +261,39 @@
             </div>
         </section>
     </main>
+
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function() {
+    
+            marqueeInit({
+    
+                  uniqueid : "mycrawler"
+    
+                , style : {
+    
+                     "padding" : "2px"
+    
+                    , "width" : "600px"
+    
+                    , "height" : "30px"
+    
+                }
+    
+                , inc : 5                              // 속도
+    
+                , mouse : "cursor driven"       // 마우스 사용여부
+    
+                , moveatleast : 2                  // 이동속도
+    
+                , neutral : 150
+    
+                , savedirection : true             // false를 선언하면 마우스 커서가 위치하는 순간 역방향으로 움직인다.
+    
+                , random : false                   // 나오는 순서(기본값 : true)
+    
+            });
+    
+        });
+    
+    </script>

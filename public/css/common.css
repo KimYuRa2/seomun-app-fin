@@ -7,6 +7,7 @@ header{
     overflow: hidden;
     min-width: 486px;
 }
+
 .t_nav{
     margin-bottom: none;
     width:1200px;
@@ -31,9 +32,7 @@ header{
 .t_nav>ul>li:nth-child(7){
     margin-left: 30px;
 }
-/* .t_nav>ul>li:nth-child(8){
-    margin-right: -40px;
-} */
+
 #user{
     color:#5B06E7;
 }

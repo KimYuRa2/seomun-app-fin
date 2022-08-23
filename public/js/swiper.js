@@ -4,7 +4,7 @@
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         },
         pagination: {
@@ -17,7 +17,7 @@
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         },
       });
@@ -44,3 +44,7 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
+      /* main페이지 swiper2개 연동 */
+      swiper_image.controller.control = swiper_text;
+      swiper_text.controller.control = swiper_image;

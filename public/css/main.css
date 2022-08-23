@@ -27,16 +27,25 @@ main{
     position:absolute;
     top:0;
     z-index: 1000;
+    
+}
+.banner_marquee a{
+    color:#fff;
 }
 .marquee_wrap{
     white-space: nowrap;
-    /*transform: translate(,0px) translateZ(0px);*/
+}
+.marquee{
+    width:100%;
+}
+.marquee span {
+     margin-right:50px; 
 }
 .marquee-banner__copy{
-    cursor: pointer;
     display:inline-block;
-    animation: marquee-banner__copy 5s linear infinite;
+    /* animation: marquee-banner__copy 5s linear infinite; */
     margin-right: 70px;
+    font-weight: 400;
 }
 
 .banner_main_img{
