@@ -58,7 +58,7 @@ article{
     width:20%;
     height:60px;
     display: block;
-    border-bottom:3px solid #5806E7;
+    border-bottom:1px solid #5806E7;
     box-sizing: border-box;
 }
 .intro_title1_wrap{
@@ -72,7 +72,7 @@ article{
     height:60px;
     text-align: left;
     box-sizing: border-box;
-    border-bottom:3px solid #5806E7;
+    border-bottom:1px solid #5806E7;
 }
 .intro_title1_wrap>.tit_food
 {
@@ -86,6 +86,23 @@ article{
 {
     width:100px;
 }
+.underline {
+    /* line-height: 1.2; */
+    background-image: linear-gradient(transparent calc(100% - 3px), #000 3px);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.4s;
+    cursor: pointer;
+}
+.underline.yellow {
+    background-image: linear-gradient(transparent 60%, #c797eb 40%);
+  }
+  .atc1:hover .underline {
+    background-size: 100% 100%;
+  }
+  .atc_wrap:hover .underline{
+    background-size: 100% 100%;
+  }
 .atc1{
     margin: auto;
     position: relative;
@@ -98,33 +115,33 @@ article{
     display:block;
     width: 1200px;
     padding-top:66.491%;
-    background-image: url(../img/201910250948228404_l.jpg);
+    background-image: url(../img/mmm.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     margin:auto;
 }
 .atc1_txt{
     width:960px;
-    border: 10px solid #2E0C7A;
+    /* border: 10px solid #2E0C7A; */
     background-color: #F0F1F3;
     text-align: center;
-    padding: 45px 30px;
+    padding: 50px 30px;
     box-sizing: border-box;
     position:absolute;
     top:600px;
     left:50%;
     transform:translate(-50%);
 }
-.atc1_txt>span{
-    font-size: 18px;
+.sec_tit{
+    font-family: 'San Francisco2';
+    font-size: 25px;
     font-weight: bold;
     color:#000;
-    line-height: 7px;
+    /* line-height: 7px; */
 }
 .atc1_txt>p{
     font-size:16px;
     color:#000;
-
 }
 /****** 먹거리 **********/
 .food{
@@ -172,7 +189,8 @@ article{
     flex-wrap:wrap;
 }
 .txt1_wrap>span{
-    font-size: 22px;
+    font-family: 'San Francisco2';
+    font-size: 25px;
     font-weight:bold;
     color:#000;
 }
@@ -206,7 +224,8 @@ article{
     text-align: center;
 }
 .txt2_wrap>span{
-    font-size: 22px;
+    font-family: 'San Francisco2';
+    font-size: 25px;
     font-weight:bold;
     color:#000;
 }
@@ -247,14 +266,28 @@ article{
     overflow: hidden;
     margin-left:20px;
 }
-.wrap2>.img4>div{
+/* .wrap2>.img4>div{
     display:block;
     width:100%;
     padding-top:64.7887%;
     background-image: url(../img/youtube.png);
     background-repeat: no-repeat;
     background-size:100% 100%;    
-}
+} */
+.video-container2 {
+    position:relative;
+    height:0;
+    padding-bottom:64.7887%;
+  }
+  
+  .video-container2 iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+
 
 /*********** 볼거리 ****************/
 .wrap1>.img5{
@@ -314,18 +347,105 @@ article{
 .intro_btn2>a{
     color:#000;
 }
+/***/
+.custom-btn {
+    width:45%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+
+    color: #fff;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+.btn-intro {
+    background-color: #f0ecfc;
+    background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-intro span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-intro:before,
+  .btn-intro:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: #c797eb;
+    transition: all 0.3s ease;
+  }
+  .btn-intro:before{
+     height: 0%;
+     width: 2px;
+  }
+  .btn-intro:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-intro:hover:before {
+    height: 100%;
+  }
+  .btn-intro:hover:after {
+    width: 100%;
+  }
+  .btn-intro:hover{
+    background: transparent;
+  }
+  .btn-intro span:hover{
+    color: #c797eb;
+  }
+  .btn-intro span:before,
+  .btn-intro span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: #c797eb;
+    transition: all 0.3s ease;
+  }
+  .btn-intro span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-intro span:after {
+    height: 2px;
+    width: 0%;
+  }
+  .btn-intro span:hover:before {
+    height: 100%;
+  }
+  .btn-intro span:hover:after {
+    width: 100%;
+  }
+
+
 @media only screen and (min-width: 2000px) {
     .intro_title1::before{
         width:35%;
     }
 }
 
-
-
 @media only screen and (max-width: 1200px) {
     /*max-width: 1200px main*/
     .intro_section{
-        margin-bottom:200px;
+        margin-bottom:120px;
         width:100%;
         box-sizing: border-box;
         padding : 0 64px;
@@ -339,7 +459,7 @@ article{
     }
     .atc1_txt{
         width:80%;
-        border: 10px solid #2E0C7A;
+        /* border: 10px solid #2E0C7A; */
         background-color: #F0F1F3;
         text-align: center;
         top:500px;
@@ -367,7 +487,7 @@ article{
         width:20%;
         height:60px;
         display: block;
-        border-bottom:3px solid #5806E7;
+        border-bottom:1px solid #5806E7;
         box-sizing: border-box;
     }
 
@@ -417,7 +537,7 @@ article{
     }
 
     .intro_title_wrap{
-        border-bottom:3px solid #5806E7;
+        border-bottom:1px solid #5806E7;
         font-size:22px;
         text-align: right;
         width:30%;

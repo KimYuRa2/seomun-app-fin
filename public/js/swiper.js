@@ -7,17 +7,16 @@
           delay: 3000,
           disableOnInteraction: false,
         },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: false,
-        },
+        // pagination: {
+        //   el: ".swiper-pagination",
+        //   type: "progressbar",
+        // },
       });
 
       var swiper_text = new Swiper(".swiper_text", {
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-          delay: 3000,
           disableOnInteraction: false,
         },
       });

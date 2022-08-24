@@ -1,3 +1,16 @@
+/* regular*/
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+  /** Bold */ 
+@font-face {
+    font-family: "San Francisco2";
+    font-weight: 700;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+  }
+
 /* header + footer 페이지 */
 /*header*/
 header{
@@ -8,20 +21,29 @@ header{
     min-width: 486px;
 }
 
+.line {
+    width:0; 
+    height:5px; 
+    background:#fff; 
+    position:absolute; 
+    bottom:0; 
+    left:0; 
+    transition : all 0.5s ease;
+}
 .t_nav{
     margin-bottom: none;
     width:1200px;
     
     margin: auto;
 }
-.t_nav>ul{
+.t_nav ul{
     display:block;
     width:1200px;
     display: flex;
     justify-content: space-between;
     height:60px;
 }
-.t_nav>ul>li{
+.t_nav ul>li{
     display:block;
     line-height: 60px;
     font-size: 16px;
@@ -29,7 +51,7 @@ header{
     color:#fff;
 }
 
-.t_nav>ul>li:nth-child(7){
+.t_nav ul>li:nth-child(7){
     margin-left: 30px;
 }
 
@@ -37,31 +59,31 @@ header{
     color:#5B06E7;
 }
 
-.t_nav>ul>li>a{
+.t_nav ul>li>a{
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     color:#fff;
 }
-.t_nav>ul>li.t_nav_event>a{
+.t_nav ul>li.t_nav_event>a{
     color:#5B06E7;
 }
-.t_nav>h1{
+.t_nav h1{
     position:absolute;
     top:15px;
     left:15px;
 }
-.t_nav>.h_seach_btn{
+.t_nav .h_seach_btn{
     position:absolute;
     top:20px;
     right:40px;
 }
-.t_nav>.h_user_btn{
+.t_nav .h_user_btn{
     position:absolute;
     top:20px;
     right:90px;
 }
-.t_nav>.h_menu_btn{
+.t_nav .h_menu_btn{
     position: absolute;
     display:none;
 }
@@ -137,7 +159,7 @@ address>ul>li>span{
         width:70%;
         margin: auto;
     }
-    .t_nav>ul{
+    .t_nav ul{
         width:100%;
     }
     
@@ -211,25 +233,25 @@ address>ul>li>span{
         width:100%;
         margin: auto; 
     }
-    .t_nav>ul{
+    .t_nav ul{
         margin: auto;
         width:70%;
         height:60px;
     }
    
-    .t_nav>ul>li>a{
+    .t_nav ul>li>a{
         font-size: 14px;
     }
    
 }
 
 @media only screen and (max-width: 1045px) {
-    .t_nav>ul{
+    .t_nav ul{
         margin: auto;
         width:70%;
         height:60px;
     }
-    .t_nav>ul>li:nth-child(7){
+    .t_nav ul>li:nth-child(7){
         display:none;
     }
     #logout{
@@ -252,26 +274,26 @@ address>ul>li>span{
     .t_nav{
         margin-bottom: none;  
     }
-    .t_nav>ul{
+    .t_nav ul{
         width:100%;
         margin: auto;
         display: flex;
         justify-content: space-between;
         height:60px;
     }
-    .t_nav>ul>li{
+    .t_nav ul>li{
         display:none;
         line-height: 60px;
     }
-    .t_nav>.h_seach_btn{
+    .t_nav .h_seach_btn{
         top:15px;
         right:80px;
     }
-    .t_nav>.h_user_btn{
+    .t_nav .h_user_btn{
         top:15px;
         right:130px;
     }
-    .t_nav>.h_menu_btn{
+    .t_nav .h_menu_btn{
         display:block;
         top:15px;
         right:30px;

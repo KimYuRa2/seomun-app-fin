@@ -45,3 +45,35 @@ function kakaoLogout(){
       alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
     })
 }
+
+/*********** 상단 메뉴 ***********/
+$(function(){
+    $('.menu li a').mouseenter(function(){  //마우스 올리면
+        var mp = $(this).parent().position().left + 'px';
+        var wd = $(this).innerWidth();
+        $('.menu .line').css("opacity",1);
+        $('.menu .line').css("left",mp).css("width",wd);
+        if(!$('.menu li.on').length > 0){
+            $('.menu li').removeClass('on');
+            $(this).parent().addClass('on');
+        }
+        return false;
+    });
+
+    if($('.menu li.on').length > 0){
+        $('.menu li a').mouseout(function(){
+            $('.menu .line').css("opacity",0);
+            $('.menu li').removeClass('on');
+            $(this).parent().removeClass('on');
+        });
+    }
+
+});
+
+// var menu_line = function(){
+//     if($('.menu li.on').length > 0){
+//         var mp = $(".menu li.on").position().left + 'px';
+//         var wd = $(".menu li.on").innerWidth();
+//         $('.menu .line').css("left",mp).css("width",wd);
+//     }
+// }
