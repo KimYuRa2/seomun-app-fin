@@ -45,6 +45,21 @@ router.get('/notice',(req,res,next)=>{
 })
 
 
+/* pagination test */
+router.get('/notice/:page', function(req, res, next){ // 게시글 리스트에 :page가 추가된것임
+    var page = req.params.page; // 현재 페이지는 params 을 req 요청받아옴
+    var sql =  "select * from notice ORDER BY id DESC";  // select 구절 그대로
+
+    connection.query(sql, function(err, rows){
+        if (err) console.err("err : " + err);
+        res.render('page', {title : '글목록', rows:rows, page:page, length:rows.length-1, page_num:10, pass:true}); 
+        // length 데이터 전체넘버 랜더링,-1을 한이유는 db에서는1부터지만 for문에서는 0부터 시작 ,page_num: 한페이지에 보여줄 갯수
+        console.log(rows.length-1);
+    });
+});
+
+
+
 
 router.get('/notice_read',(req,res,next)=>{
     let id = req.query.id;
@@ -121,6 +136,9 @@ router.get('/deleteNotice',(req,res)=>{
         res.redirect('/notice');
     });
 });
+
+
+
 
 /**
  * 여러 파일 업로드

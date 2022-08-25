@@ -3,13 +3,24 @@
 const mysql = require('mysql');
 const moment = require('moment'); // 날짜 포멧을 위한 모듈
 
+/* ura31 - heroku cleardb */
+// var connection = mysql.createConnection({
+//     host : 'us-cdbr-east-05.cleardb.net',
+//     user : 'b78046f24dbbb0',
+//     password : '655bb985',
+//     port : '3306',
+//     database : 'heroku_a10026ffac36fc8',
+//     dateStrings:'date'
+// })
+
+/* seomun-local */
 var connection = mysql.createConnection({
-    host : 'us-cdbr-east-05.cleardb.net',
-    user : 'b78046f24dbbb0',
-    password : '655bb985',
-    port : '3306',
-    database : 'heroku_a10026ffac36fc8',
-    dateStrings:'date' //날짜 시간 출력
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: '1234',
+    database: 'seomun-local',
+    dateStrings:'date'
 })
 
 /* db disconnect 에러 해결 */
@@ -92,7 +103,9 @@ function deleteNoticeById(id,callback){
 
 
 
+
 module.exports = {
+    handleDisconnect,
     getAllNotice,
     insertNotice,
     getNoticeById,
