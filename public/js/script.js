@@ -1,5 +1,5 @@
 Kakao.init('75151c20cdc2afe112513ee9241e8de8'); //jS key : seomun-app01
-Kakao.isInitialized();
+Kakao.isInitialized(); //sdk 초기화 여부 판단
 
 /* 첫 화면에서 로그아웃 버튼 안보이게 설정해두기 */
 document.getElementById('logout').style.display = 'none';
@@ -30,11 +30,11 @@ function kakaoLogout(){
             url : '/v2/user/unlink',
             success : function(response){
                 console.log(response);
-                /* 로그인 성공하면 user의 profile 중 nickname을 불러와서 넣어주기 */
                 document.getElementById('user').style.display = 'none';
                 document.getElementById('login').style.display = 'block';
                 document.getElementById('logout').style.display = 'none';
                 alert('로그아웃 되었습니다.');
+                console.log('카카오 로그아웃');
             }
         })
         Kakao.Auth.setAccessToken(undefined);
@@ -42,11 +42,13 @@ function kakaoLogout(){
 
     
     Kakao.Auth.logout(function() {
-      alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
+      console.log('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
+      alert('로그아웃 되었습니다.');
+      location.reload(); /* 로그아웃 성공 시, 화면 새로고침 */
     })
 }
 
-/*********** 상단 메뉴 ***********/
+/*********** 상단 메뉴 (hover시 따라다니는 흰 line)***********/
 $(function(){
     $('.menu li a').mouseenter(function(){  //마우스 올리면
         var mp = $(this).parent().position().left + 'px';

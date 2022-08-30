@@ -2,7 +2,7 @@
     background-color: #fff;
 }
 .notice_section{
-    margin-bottom:123px;
+    margin-bottom:85px;
 }
 article{
     width: 1200px;
@@ -62,7 +62,7 @@ article{
     line-height: 80px;
     border-color: #e2e2e2;
     padding-left: 40px;
-    font-size: 12px;
+    font-size: 16px;
     color:#483E3E;
     box-sizing: border-box;
 }
@@ -88,7 +88,7 @@ article{
     width:20%;
     height:60px;
     display: block;
-    border-bottom:5px solid #5806E7;
+    border-bottom:1px solid #5806E7;
     box-sizing: border-box;
     }
 .title1_wrap>div{
@@ -99,7 +99,7 @@ article{
     height:60px;
     text-align: right;
     box-sizing: border-box;
-    border-bottom:5px solid #5806E7;
+    border-bottom:1px solid #5806E7;
 }
 
 
@@ -245,7 +245,7 @@ article{
     width:45%;
     font-size:22px;
     font-weight: bold;
-    padding:20px 0;
+    /* padding:20px 0; */
     text-align: center;
     border: 10px solid #5B06E7;
     color:#000;
@@ -254,18 +254,26 @@ article{
 }
 .h_btn1>a{
     color:#000;
+    display:block;
+    width:100%;
+    height:100%;
+    padding:20px 0;
 }
 .h_btn2{
     width:45%;
     font-size:22px;
     font-weight: bold;
-    padding:20px 0;
+    /* padding:20px 0; */
     text-align: center;
     border: 10px solid #2E0C7A;
     box-sizing: border-box;
 }
 .h_btn2>a{
     color:#000;
+    display:block;
+    width:100%;
+    height:100%;
+    padding:20px 0;
 }
 
 .h_btn2>a>span{

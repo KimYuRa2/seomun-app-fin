@@ -110,5 +110,5 @@ module.exports = {
     insertNotice,
     getNoticeById,
     updateNoticeById,
-    deleteNoticeById,
+    deleteNoticeById
 }

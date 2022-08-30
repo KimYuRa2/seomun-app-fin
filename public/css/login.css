@@ -58,6 +58,10 @@
 .login_sub_list>li>a{
     color:black;
 }
+
+#login>img{
+    cursor: pointer;
+}
 @media only screen and (max-width: 1200px) {
     .login_section{
         width:100%;

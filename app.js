@@ -29,6 +29,7 @@ const app = express()
 
 var expressLayouts = require('express-ejs-layouts');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var logger = require('morgan');
 
 const routers = require('./routes/route.js');
@@ -40,6 +41,8 @@ app.use(expressLayouts);//express-ejs-layout 사용
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use('/', routers);//use : 미들웨어 등록
 

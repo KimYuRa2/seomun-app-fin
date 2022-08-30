@@ -1,32 +1,4 @@
-
-/* Text and/or Image Crawler Script v1.53 (c)2009-2012 John Davenport Scheuer
-   as first seen in http://www.dynamicdrive.com/forums/
-   username: jscheuer1 - This Notice Must Remain for Legal Use
-   updated: 4/2011 for random order option, more (see below)
-   */
-
-/* Update 4/2011 to v1.5 - Adds optional random property. Set it to true to use.
-   Fixes browser crash from empty crawlers, ad and image blocking software/routines.
-   Fixes behavior in some IE of breaking script if an image is missing.
-   Adds alt attributes to images without them to aid in diagnosis of missing/corrupt
-   images. This may be disabled with the new optional noAddedAlt property set to true.
-   Internal workings enhanced for greater speed of execution, less memory usage.
-   */
-
-/* Update 11/2011 - Detect and randomize td elements within a single table with a single tr */
-
-// updated 7/2012 to 1.51 for optional integration with 3rd party initializing scripts -
-// ref: http://www.dynamicdrive.com/forums/showthread.php?p=278161#post278161
-// updated 8/2012 to 1.52 for greater compatibility with IE in Quirks Mode
-
-/* Update 10/2012 to v1.53 - Adds optional persist property to have the crawler remember its
-   position and direction page to page and on page reload. To enable it in the marqueeInit set
-   persist: true,
-   */
-
-///////////////// No Need to Edit - Configuration is Done in the On Page marqueeInit call(s) /////////////////
-
-
+/* marquee */
 function marqueeInit(config){
     if(!document.createElement) return;
     marqueeInit.ar.push(config);
