@@ -1,8 +1,9 @@
+//카카오 초기화
 Kakao.init('75151c20cdc2afe112513ee9241e8de8'); //jS key : seomun-app01
 Kakao.isInitialized(); //sdk 초기화 여부 판단
 
 /* 첫 화면에서 로그아웃 버튼 안보이게 설정해두기 */
-document.getElementById('logout').style.display = 'none';
+// document.getElementById('logout').style.display = 'none';
 
 function kakaoLogin(){
     Kakao.Auth.login({
@@ -17,6 +18,10 @@ function kakaoLogin(){
                     document.getElementById('login').style.display = 'none';
                     document.getElementById('logout').style.display = 'block';
                     alert(response.kakao_account.profile.nickname + '님 안녕하세요!');
+                    // window.location.href="http://localhost:3000/";
+                },
+                fail: function(err){
+                    alert(JSON.stringify(err));
                 }
             })
         }
