@@ -367,14 +367,16 @@ article{
      7px 7px 20px 0px rgba(0,0,0,.1),
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
+    
   }
   
 .btn-intro {
     background-color: #f0ecfc;
     background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
-    line-height: 42px;
+    line-height: 70px;
     padding: 0;
     border: none;
+
   }
   .btn-intro span {
     position: relative;
